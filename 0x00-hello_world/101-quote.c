@@ -7,7 +7,7 @@
  *
  */
 
-int main(Void)
+int main(void)
 {
 
 

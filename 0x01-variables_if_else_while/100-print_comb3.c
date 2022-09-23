@@ -8,17 +8,17 @@
 
 int main(void)
 {
-	int y; /*ones digit*/
-	int x; /*tens digit*/
+	int ones;
+	int tens;
 
-	for (x = '0'; x <= '9'; x++) /*increment for the tens digit*/
+	for (tens = '0'; tens <= '9'; tens++) /*increment tens*/
 	{
-		for (y = (x + 1); y <= '9'; y++) /*increment for the ones digit by 1 each time*/
+		for (ones = (tens + 1); ones <= '9'; ones++) /*one's ten+1*/
 		{
-			putchar(x);
-			putchar(y);
+			putchar(tens);
+			putchar(ones);
 
-			if (y != '8' || x != '9') /*print commas*/
+			if (tens != '8' || ones != '9') /*print commas*/
 			{
 				putchar(',');
 				putchar(' ');

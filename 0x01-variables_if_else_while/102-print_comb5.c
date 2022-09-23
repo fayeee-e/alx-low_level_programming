@@ -1,41 +1,37 @@
 #include <stdio.h>
 
 /**
- *main - print a num pair from 00-99 but no repeats (00 01, 00 02, 00 03,...)
+ *main - print a num pair (xy) from 00-99 but no repeats (00 01, 00 02, 00 03,...)
  *Return: Always 0 (Success)
  */
 
 int main(void)
 {
-	int tens;
-	int ones;
-	int t;
-	int o;
+	int x = 0;
+	int y;
 
-	for (tens = '0'; tens <= '9'; tens++) /*print first two digit combo*/
+	while (x <= 99)
 	{
-		for (ones = '0'; ones <= '9'; ones++)
+		y = x;
+		while (y <= 99)
 		{
-		 	for (t = tens; t <= '9'; t++) /*print second of pair*/
+			if (y != x)
 			{
-				for (o = ones + 1; o <= '9'; o++)
-				{
-					putchar(tens);
-					putchar(ones);
-					putchar(' ');
-					putchar(t);
-					putchar(o);
+				putchar((x / 10) + 48);
+				putchar((x % 10) + 48);
+				putchar(' ');
+				putchar((y / 10) + 48);
+				putchar((y % 10) + 48);
 
-					if (!((tens == '9' && ones == '8') &&
-					      (t == '9' && o == '9')))
-					{
-						putchar(',');
-						putchar(' ');
-					}
+				if (x != 98 || y != 99)
+				{
+					putchar(',');
+					putchar(' ');
 				}
-				o = '0';
 			}
+			++y;
 		}
+		++x;
 	}
 	putchar('\n');
 
